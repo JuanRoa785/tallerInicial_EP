@@ -299,23 +299,37 @@ public final class Index extends javax.swing.JFrame {
     }
     
     private void jBShowDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBShowDataMouseClicked
-          if(this.gestionador == null) {
-              JOptionPane.showMessageDialog(null, "¡Por favor cargué el archivo chicos.csv para poder generar el informe!", "¡Archivo Sin Cargar!", JOptionPane.ERROR_MESSAGE);
-         } else {
-             this.cerrarVentanasInnecesarias("operaciones");
-             this.reporteEspecial = new Reporte(this.gestionador);   
-             reporteEspecial.setVisible(true);
-         }
+        if (this.gestionador == null) {
+            JOptionPane.showMessageDialog(null, "¡Por favor cargué el archivo chicos.csv para poder generar el informe!", "¡Archivo Sin Cargar!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (this.reporteEspecial != null) {
+            if (this.reporteEspecial.isVisible()) {
+                return;
+            } 
+        }
+        
+        this.cerrarVentanasInnecesarias("operaciones");
+        this.reporteEspecial = new Reporte(this.gestionador);
+        this.reporteEspecial.setVisible(true);
     }//GEN-LAST:event_jBShowDataMouseClicked
 
     private void jBOperationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBOperationsMouseClicked
         if (this.gestionador == null) {
             JOptionPane.showMessageDialog(null, "¡Por favor cargué el archivo chicos.csv para poder editarlo!", "¡Archivo Sin Cargar!", JOptionPane.ERROR_MESSAGE);
-        } else {
-            this.cerrarVentanasInnecesarias("reporte");
-            this.operaciones = new Operaciones(this.gestionador);
-            this.operaciones.setVisible(true);
+            return;
         }
+
+        if (this.operaciones != null) {
+            if (this.operaciones.isVisible()) {
+                return;
+            }
+        }
+
+        this.cerrarVentanasInnecesarias("reporte");
+        this.operaciones = new Operaciones(this.gestionador);
+        this.operaciones.setVisible(true);
     }//GEN-LAST:event_jBOperationsMouseClicked
 
     private void jBExportDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBExportDataMouseClicked
