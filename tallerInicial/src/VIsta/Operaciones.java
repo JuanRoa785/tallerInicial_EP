@@ -38,6 +38,7 @@ public class Operaciones extends javax.swing.JFrame {
                 jSelectNewCiudad.setSelectedItem(estudiante.getCiudad());
                 
                 jTFNewCodigo.setEditable(false);
+                jLFeedback.setText("");
             }
         }
     }
@@ -387,7 +388,7 @@ public class Operaciones extends javax.swing.JFrame {
         
         if(jTFBuscador.getText().trim().equals("")){
             jLError.setText("Digité un codigo Valido");
-            this.reiniciarCampos();
+            this.reiniciarCampos(true);
             return;
         }
         
@@ -399,10 +400,10 @@ public class Operaciones extends javax.swing.JFrame {
         }
         
         jLError.setText("No se encontró un estudiante con ese codigo");
-        this.reiniciarCampos();
+        this.reiniciarCampos(true);
     }
     
-    public void reiniciarCampos() {
+    public void reiniciarCampos(boolean reiniciarFeedback) {
         jTFNewCodigo.setText("");
         jTFNewNombre.setText("");
         jTFNewEdad.setText("");
@@ -410,6 +411,10 @@ public class Operaciones extends javax.swing.JFrame {
         jSelectNewCiudad.setSelectedItem("Bucaramanga");
 
         jTFNewCodigo.setEditable(true);
+        
+        if(reiniciarFeedback){
+            jLFeedback.setText("");
+        }
     }
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -459,7 +464,7 @@ public class Operaciones extends javax.swing.JFrame {
         for(Persona estudiante:this.gestionador.getListaPersonas()){
             if(estudiante.getCodigo().equalsIgnoreCase(jTFNewCodigo.getText().trim())){
                 JOptionPane.showMessageDialog(null, "¡Ya se ha registrado un estudiante con ese codigo!", "¡Codigo invalido!", JOptionPane.ERROR_MESSAGE);
-                this.reiniciarCampos();
+                this.reiniciarCampos(false);
                 return;
             }       
         }
@@ -477,7 +482,7 @@ public class Operaciones extends javax.swing.JFrame {
         listaActualizada.add(nuevoEstudiante);
         this.gestionador.setListaPersonas(listaActualizada);
         
-        this.reiniciarCampos();
+        this.reiniciarCampos(false);
     }
     
     public String obtenerSexoAcortado(){
@@ -504,12 +509,12 @@ public class Operaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jBAgregarMouseClicked
 
     private void jBReiniciarCamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBReiniciarCamposMouseClicked
-        this.reiniciarCampos();        // TODO add your handling code here:
+        this.reiniciarCampos(true);        
     }//GEN-LAST:event_jBReiniciarCamposMouseClicked
 
     private void jBReiniciarCamposKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBReiniciarCamposKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.reiniciarCampos();
+            this.reiniciarCampos(true);
         }
     }//GEN-LAST:event_jBReiniciarCamposKeyPressed
 
@@ -533,8 +538,8 @@ public class Operaciones extends javax.swing.JFrame {
                 estudiante.setEdad(Integer.valueOf(jTFNewEdad.getText().trim()));
                 estudiante.setNombre(jTFNewNombre.getText().trim().toUpperCase());
 
-                jLFeedback.setText("¡Estudiante Actualizado Exitosamente!");
                 this.cargarInformaciónEstudiante(jTFNewCodigo.getText());
+                 jLFeedback.setText("¡Estudiante Actualizado Exitosamente!");
                 return;
             }
         }
@@ -555,8 +560,8 @@ public class Operaciones extends javax.swing.JFrame {
                 estudiante.setEdad(Integer.valueOf(jTFNewEdad.getText().trim()));
                 estudiante.setNombre(jTFNewNombre.getText().trim().toUpperCase());
 
-                jLFeedback.setText("¡Estudiante Actualizado Exitosamente!");
                 this.cargarInformaciónEstudiante(jTFNewCodigo.getText());
+                jLFeedback.setText("¡Estudiante Actualizado Exitosamente!");
                 return;
             }
         }
@@ -570,7 +575,7 @@ public class Operaciones extends javax.swing.JFrame {
                 if (dialogResult == JOptionPane.YES_OPTION) {
                     Integer indiceAux = this.gestionador.getListaPersonas().indexOf(estudiante);
                     this.gestionador.getListaPersonas().remove(this.gestionador.getListaPersonas().get(indiceAux));
-                    this.reiniciarCampos();
+                    this.reiniciarCampos(true);
                     this.jTFBuscador.setText("");
                     return;
                 }
@@ -587,7 +592,7 @@ public class Operaciones extends javax.swing.JFrame {
                 if (dialogResult == JOptionPane.YES_OPTION) {
                     Integer indiceAux = this.gestionador.getListaPersonas().indexOf(estudiante);
                     this.gestionador.getListaPersonas().remove(this.gestionador.getListaPersonas().get(indiceAux));
-                    this.reiniciarCampos();
+                    this.reiniciarCampos(true);
                     this.jTFBuscador.setText("");
                     return;
                 }
