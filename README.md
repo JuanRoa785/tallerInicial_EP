@@ -44,3 +44,6 @@ La logica del sistema se centrá enteramente en la clase `Gestionador`, pues es 
 
 ___
 ## Features del Software
+
+___
+## Trabajo Futuro
