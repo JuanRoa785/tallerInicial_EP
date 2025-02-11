@@ -114,14 +114,10 @@ Finalmente, el sistema para exportar los datos almacena el __directorio actual__
 ___
 ## Prueba en vivo + Explicación Superficial
 
-__Enlace Video Youtube:__
+__Enlace Video Youtube:__ https://www.youtube.com/watch?v=rNVDvoiLBrA
 <p align="center">
   <a href="https://www.youtube.com/watch?v=rNVDvoiLBrA"><img src="https://img.youtube.com/vi/rNVDvoiLBrA/0.jpg"/></a>
 </p>
-
-
-
-
 
 ___
 ## Features del Software
