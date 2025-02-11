@@ -112,6 +112,18 @@ Finalmente, el sistema para exportar los datos almacena el __directorio actual__
 </p>
 
 ___
+## Prueba en vivo + Explicación Superficial
+
+__Enlace Video Youtube:__
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=rNVDvoiLBrA"><img src="https://img.youtube.com/vi/rNVDvoiLBrA/0.jpg"/></a>
+</p>
+
+
+
+
+
+___
 ## Features del Software
 - __Lenguaje de programación:__ Java 17.0.12
 - __IDE:__ Netbeans
