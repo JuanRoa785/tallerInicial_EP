@@ -113,6 +113,26 @@ Finalmente, el sistema para exportar los datos almacena el __directorio actual__
 
 ___
 ## Features del Software
-
+- __Lenguaje de programación:__ Java 17.0.12
+- __IDE:__ Netbeans
+- __Interfaz Grafica__ 
+- __CSV no fijo__
+- __Display de la información del CSV:__ Por medio de Tablas y Diagramas de torta
+- __Filtrar Estudiantes por su codigo__
+- __Unificar el sexo y la ciudad de los estudiantes por medio de Desplegables__
+- __Actualización automatica de los datos mostrados en la tabla__
+- __Múltiples validaciones en el CRUD del sistema__
+- __Exportación de datos actualizados con fecha automática__
 ___
 ## Trabajo Futuro
+- Actualizar y mejorar la interfaz gráfica, para hacerla mas amigable al usuario.
+  - Esto incluye disminuir el uso de JFrames innecesarios, por ejemplo los reportes e inclusive el menú del CRUD podría hacer parte del mismo JFrame principal.
+- Optimizar los métodos y el código en general:
+  - Eliminar código repetido (Modularizar lo máximo posible el sistema)
+  - En las diferentes operaciones del CRUD ajustar el código utilizado para actualizar el ArrayList de estudiantes.
+  - Rediseñar los atributos de la clase persona para reducir la redundancia de información en el sistema.
+  - Implementar una clase `ciudad` que eliminé la necesidad de utilizar diccionarios para traducirlos y que en caso de que sea necesario, permita el escalado de la aplicación de una manera mas sencilla.
+  - Reestructurar la lógica en pro de seguir el patrón de diseño adecuado según los requisitos funcionales.
+  - Etc.
+- Como __Reto Personal__ en la medida de que el tiempo lo permita, implementar una 2da versión del software, desarrollado en VSC como un aplicativo web sencillo, donde toda la lógica del mismo se haga por medio de `JavaScript`. 
+  
